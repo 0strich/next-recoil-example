@@ -1,6 +1,6 @@
 import { useEffect, useCallback } from "react";
 import { useRecoilState } from "recoil";
-import { todolistState } from "../atoms/todolist";
+import { todolistState } from "../store/todolist";
 import { getTodoList } from "../libs/todolist";
 
 const useTodoList = (enabled = true) => {
