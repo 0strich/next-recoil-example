@@ -8,17 +8,13 @@ export default function TodoList() {
     useRecoilValue(todolistValues);
   const { loading, error } = useTodoList();
 
-  console.log("todolist: ", todolist);
-  console.log("todolistCount: ", todolistCount);
-  console.log("todolistCompleteCount: ", todolistCompleteCount);
-
   return (
-    <div>
+    <div style={{ padding: 30 }}>
       {todolist.map((el) => (
         <div key={el?.id}>
-          <div>id: {el?.id}</div>
-          <div>content: {el?.content}</div>
-          <div>isChecked: {el?.isChecked}</div>
+          <span>{el?.id + 1}번. </span>
+          <input type="checkbox" checked={el?.isChecked} />
+          <input type="text" value={el?.content} />
         </div>
       ))}
     </div>
